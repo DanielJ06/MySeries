@@ -8,12 +8,12 @@ module.exports = {
     },
 
     async store(req, res) {
-        const { name, status, comments } = req.body
+        const { name, status, bio } = req.body
 
         const serie = await Serie.create({
             name,
             status,
-            comments
+            bio
         }) 
         return res.json(serie)
     }

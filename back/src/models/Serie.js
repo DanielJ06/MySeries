@@ -6,7 +6,7 @@ const SerieSchema = new mongoose.Schema({
         type: String,
         enumValues: ['to-watch', 'watching', 'watched']
     },
-    comments: [String]
+    bio: String
 }) 
 
 module.exports = mongoose.model('Serie', SerieSchema)
