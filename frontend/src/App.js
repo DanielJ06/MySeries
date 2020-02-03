@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 //import api from './services/api'
 
@@ -15,13 +15,10 @@ function App() {
     <div id="app">
       <aside>
         <strong>Adicionar Série</strong>
-        <Form/>
+        <Form />
       </aside>
       <main>
-          <ul>
-            <Item />
-            <Item />
-          </ul>
+        <Item />
       </main>
     </div>
   );
