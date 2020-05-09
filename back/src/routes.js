@@ -4,9 +4,8 @@ const routes = Router()
 
 const serieController = require('./controllers/serieController')
 
-routes.get('/', serieController.index)
-
-routes.post('/', serieController.store)
+routes.get('/serie', serieController.index)
+routes.post('/serie', serieController.store)
 
 
 module.exports = routes
