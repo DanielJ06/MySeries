@@ -16,5 +16,18 @@ module.exports = {
             bio
         }) 
         return res.json(serie)
+    },
+
+    async delete(req, res) {
+        const { id } = req.params
+        const serie = await Serie.findOne({_id: id})
+        
+        if(!serie) {
+            return res.status(401).json({error: "Id not found"})
+        }
+        
+        await Serie.deleteOne(serie)
+
+        return res.json({Response: "Serie has been successfully deleted"})
     }
 }

@@ -10,15 +10,23 @@ import {
 
 function Form() {
   const [name, setName] = useState('')
-  const [status, setStatus] = useState('')
+  const [status, setStatus] = useState('to-watch')
   const [bio, setBio] = useState('')
 
-  async function handleAddSerie() {
-    const res = await api.post('/serie', {
+  async function handleAddSerie(e) {
+    e.preventDefault();
+
+    const data = {
       name,
       status,
       bio
-    })
+    }
+
+    try {
+      await api.post('/serie', data)
+    } catch (err) {
+      alert('Error')
+    }
   }
 
   return (

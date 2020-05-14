@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { CardContainer, List } from './styles';
+import { FaTrash } from 'react-icons/fa';
 
+import { CardContainer, List } from './styles';
 import api from '../../services/api';
 
 function Card() {
@@ -14,7 +15,15 @@ function Card() {
       setSeries(res.data);
     }
     loadSeries();
-  }, [])
+  }, [series])
+
+  async function handleDeleteSerie(id) {
+    try {
+      await api.delete(`/serie/${id}`)
+    } catch(err) {
+      alert(err)
+    }
+  }
 
   return (
     <List>
@@ -25,6 +34,9 @@ function Card() {
               <strong>{serie.name}</strong>
               <span># {serie.status}</span>
             </div>
+            <button type="button" onClick={() => handleDeleteSerie(serie._id)} >
+              <FaTrash size={16} color='#999' />
+            </button>
           </header>
           <p>{serie.bio}</p>
         </CardContainer>

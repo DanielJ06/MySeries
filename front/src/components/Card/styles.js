@@ -25,6 +25,15 @@ export const CardContainer = styled.li`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+
+    button {
+      border: none;
+
+      :hover {
+        cursor: pointer;
+      }
+    }
   }
 
   strong {
