@@ -29,6 +29,7 @@ export const CardContainer = styled.li`
 
     button {
       border: none;
+      margin-left: 12px;
 
       :hover {
         cursor: pointer;

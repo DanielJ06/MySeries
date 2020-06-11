@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaTrash, FaPencilAlt } from 'react-icons/fa';
 
 import { CardContainer, List } from './styles';
 import api from '../../services/api';
@@ -32,11 +33,23 @@ function Card() {
           <header>
             <div className="user-info">
               <strong>{serie.name}</strong>
-              <span># {serie.status}</span>
+              <span>#{serie.status}</span>
             </div>
-            <button type="button" onClick={() => handleDeleteSerie(serie._id)} >
-              <FaTrash size={16} color='#999' />
-            </button>
+            <div>
+              <Link
+                to={{
+                  pathname: "/edit",
+                  state: {
+                    from: serie
+                  }
+                }}
+              >
+                <FaPencilAlt size={16} color='#999' />
+              </Link>
+              <button type="button" onClick={() => handleDeleteSerie(serie._id)} >
+                <FaTrash size={16} color='#999' />
+              </button>
+            </div>
           </header>
           <p>{serie.bio}</p>
         </CardContainer>

@@ -29,5 +29,18 @@ module.exports = {
         await Serie.deleteOne(serie)
 
         return res.json({Response: "Serie has been successfully deleted"})
+    },
+
+    async edit(req, res) {
+        const { id } = req.params
+        const { name, status, bio } = req.body
+
+        const serie = await Serie.findByIdAndUpdate({_id: id}, {
+            name,
+            status,
+            bio,
+        })
+
+        return res.json(serie)
     }
 }
