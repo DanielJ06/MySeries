@@ -1,8 +1,14 @@
 # MySeries
-🎥 Manage your series easily 📽️
 
+<h3 align="center">
+  🎥 Manage your series easily 📽️
+</h3>
 
-[![Author](https://img.shields.io/badge/author-DanielDeJesus-69B6F3?style=flat-square)](https://github.com/DanielJ06)
+<p align="center">
+   <img src=".github/preview.PNG" width="500"/>
+</p>
+  
+[![Author](https://img.shields.io/badge/author-DanielDeJesus-69B6F3?style=flat-square)](https://github.com/DanielJ06)<space><space>
 [![Languages](https://img.shields.io/github/languages/count/DanielJ06/MySeries?color=%2369B6F3&style=flat-square)](#)
 
 ---
